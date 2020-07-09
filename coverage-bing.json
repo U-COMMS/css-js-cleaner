@@ -1,4 +1,4 @@
-[
+{ "data" :[
   {
     "url": "https://www.bing.com/",
     "ranges": [
@@ -6939,4 +6939,4 @@
     ],
     "text": "IPv6Tests.TestIPv6Response('{&quot;type&quot;: &quot;4&quot;}');"
   }
-]
+]}

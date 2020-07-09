@@ -98,19 +98,20 @@ with open('coverage.json') as json_file:
   coverage_data = json.load(json_file)["data"]
   cleaned_data = coverage_data
 
-  for compare_file in compare_files:
-    with open(compare_file) as next_json_file:
-      next_file_data = json.load(next_json_file)["data"]
+  if compare_files:
+    for compare_file in compare_files:
+      with open(compare_file) as next_json_file:
+        next_file_data = json.load(next_json_file)["data"]
 
-    ci = 0
-    for coverage_file in cleaned_data:
-      cleaning_range = coverage_file['ranges']
-      for next_file in next_file_data:
-        if next_file["url"] == coverage_file["url"]:
-          print("## Cleaning File: %s" % (coverage_file["url"]))
-          for home_range in next_file['ranges']:
-            cleaning_range = clean_range(cleaning_range, home_range)
-      cleaned_data[ci]["ranges"] = cleaning_range
+      ci = 0
+      for coverage_file in cleaned_data:
+        cleaning_range = coverage_file['ranges']
+        for next_file in next_file_data:
+          if next_file["url"] == coverage_file["url"]:
+            print("## Cleaning File: %s" % (coverage_file["url"]))
+            for home_range in next_file['ranges']:
+              cleaning_range = clean_range(cleaning_range, home_range)
+        cleaned_data[ci]["ranges"] = cleaning_range
 
 # f = open("temp.json", "a")
 # f.write(json.dumps(cleaned_data))
