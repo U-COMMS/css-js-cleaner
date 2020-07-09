@@ -3,7 +3,7 @@ import os
 import errno
 
 initial_file = "coverage-google.json"
-compare_files = ["coverage-earch.json"]
+compare_files = ["coverage-search.json"]
 domain_name = "https://google.com"
 
 def clean_range(initial_data, append_data):
