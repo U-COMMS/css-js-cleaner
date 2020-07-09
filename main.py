@@ -2,9 +2,9 @@ import json
 import os
 import errno
 
-initial_file = "coverage-google.json"
+initial_file = "coverage-bing.json"
 compare_files = ["coverage-search.json"]
-domain_name = "https://google.com"
+domain_name = "https://www.bing.com"
 
 def clean_range(initial_data, append_data):
   new_range = []
